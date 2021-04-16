@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: events-internal
-  name: events-internal
+    app: internal
+  name: internal
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: events-internal
+      app: internal
   strategy: {}
   template:
     metadata:
       labels:
-        app: events-internal
+        app: internal
     spec:
       containers:
-      - image: gcr.io/mar-roidtc307/devoops_internal:latest
-        name: events-internal
+      - image: gcr.io/twitterfeedstokafkatest/devoops_internal:v1.0
+        name: internal
         imagePullPolicy: "Always"
         resources:
           requests:
